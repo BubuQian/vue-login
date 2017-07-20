@@ -12,7 +12,11 @@ export function createRouter () {
     const routes = [
         {
             path: '/',
-            component: Welcome 
+            redirect: '/welcome' 
+        },
+        {
+            path: '/welcome',
+            component: Welcome
         },
         {
             path: '/home',
@@ -28,8 +32,5 @@ export function createRouter () {
         }
     ]
     const router = new VueRouter({routes});
-    router.redirect({
-        '*': '/home'
-    })
     return router
 }
